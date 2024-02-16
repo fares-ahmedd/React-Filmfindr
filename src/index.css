@@ -39,7 +39,7 @@ body {
   padding: 0 3.2rem;
   background-color: var(--color-background-100);
 }
-@media (max-width: 500px) {
+@media (max-width: 670px) {
   .logo {
     text-align: center;
   }
@@ -95,17 +95,27 @@ body {
   font-weight: 600;
   color: #fff;
 }
-
-.search {
-  justify-self: center;
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+.search,
+form button {
   border: none;
   padding: 1.1rem 1.6rem;
   font-size: 1.8rem;
   border-radius: 0.7rem;
   transition: all 0.3s;
-  width: 90%;
   color: var(--color-text-input);
   background-color: var(--color-primary);
+}
+.search {
+  width: 80%;
+}
+form button {
+  cursor: pointer;
 }
 .search::placeholder {
   color: var(--color-text-input);
