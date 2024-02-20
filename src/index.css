@@ -66,6 +66,10 @@ body {
     height: calc(100vh - 7.2rem - 3 * 3.4rem);
   }
 }
+.test {
+  font-size: 100px;
+  background-color: red;
+}
 .box {
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
@@ -86,6 +90,7 @@ body {
   text-align: center;
   font-size: 2rem;
   padding: 4.8rem;
+  color: var(--color-red-dark);
 }
 
 /* ******* */
