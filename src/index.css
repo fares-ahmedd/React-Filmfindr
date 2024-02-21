@@ -1,4 +1,5 @@
 :root {
+  /* dark mode */
   --color-primary: #90a0df;
   --color-primary-light: #a0b3ff;
   --color-text: #dee2e6;
@@ -9,6 +10,18 @@
   --color-background-900: #181818;
   --color-red: #fa5252;
   --color-red-dark: #e03131;
+
+  /* light mode */
+  --color-primary-light-mode: #1976d2;
+  --color-primary-dark-mode: #90a0df;
+  --color-text-light-mode: #212121;
+  --color-text-dark-mode: #dee2e6;
+  --color-text-input-light-mode: black;
+  --color-background-100-light-mode: #ffffff;
+  --color-background-500-light-mode: #f4f6fa;
+  --color-background-900-light-mode: #eeeeee;
+  --color-red-light-mode: #d32f2f;
+  --color-red-dark-mode: #fa5252;
 }
 
 * {
@@ -28,7 +41,22 @@ body {
   color: var(--color-text);
   background-color: var(--color-background-900);
 }
-
+body.dark-mode {
+  /* Switch to light mode */
+  --color-primary: var(--color-primary-light-mode);
+  --color-text: var(--color-text-light-mode);
+  --color-text-input: var(--color-text-input-light-mode);
+  --color-background-100: var(--color-background-100-light-mode);
+  --color-background-500: var(--color-background-500-light-mode);
+  --color-background-900: var(--color-background-900-light-mode);
+  --color-red: var(--color-red-light-mode);
+}
+em {
+  color: var(--color-text-input);
+}
+.user-rating {
+  color: rgb(252, 196, 25);
+}
 /* ******* */
 
 .nav-bar {
@@ -93,12 +121,32 @@ body {
   color: var(--color-red-dark);
 }
 
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(0);
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  margin-right: 20px;
+  font-size: 20px;
+}
+
 /* ******* */
 
 .logo h1 {
   font-size: 2.4rem;
   font-weight: 600;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 form {
   display: flex;
@@ -214,7 +262,7 @@ form button {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  background-color: var(--color-red);
+  background-color: black;
   color: var(--color-background-900);
   font-size: 0.9rem;
   font-weight: bold;
@@ -236,7 +284,7 @@ form button {
 }
 @media (max-width: 500px) {
   .summary {
-    padding: 10px 0;
+    padding: 10px;
   }
 }
 .summary h2 {
@@ -286,7 +334,7 @@ form button {
 }
 
 .details section {
-  padding: 4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
