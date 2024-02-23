@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import StartRating from "./starRating";
 import { useMovies } from "./useMovies";
 import { useLocalStorageState } from "./useLocalStorageState";
@@ -28,6 +28,16 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
+  // function handleDarkAndLight() {
+  //   setIsDark(!isDark);
+  //   localStorage.setItem("dark-mode", isDark);
+  //   console.log(isDark);
+  //   if (isDark) {
+  //     document.body.classList.remove("dark-mode");
+  //   } else {
+  //     document.body.classList.add("dark-mode");
+  //   }
+  // }
   function handleDarkAndLight() {
     setIsDark(!isDark);
     localStorage.setItem("dark-mode", isDark);
@@ -41,10 +51,7 @@ export default function App() {
   useEffect(function () {
     handleDarkAndLight();
   }, []);
-  // useEffect(function () {
-  //   if (localStorage.getItem("dark-mode") === "dark-mode")
-  //     document.body.classList.add("dark-mode");
-  // }, []);
+
   // todo : components
   return (
     <>
