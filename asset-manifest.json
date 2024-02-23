@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Filmfindr/static/css/main.3e664568.css",
+    "main.js": "/React-Filmfindr/static/js/main.f482aae9.js",
+    "index.html": "/React-Filmfindr/index.html",
+    "main.3e664568.css.map": "/React-Filmfindr/static/css/main.3e664568.css.map",
+    "main.f482aae9.js.map": "/React-Filmfindr/static/js/main.f482aae9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e664568.css",
+    "static/js/main.f482aae9.js"
+  ]
+}
