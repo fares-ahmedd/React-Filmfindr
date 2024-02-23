@@ -11,17 +11,17 @@
   --color-red: #fa5252;
   --color-red-dark: #e03131;
 
-  /* light mode */
+  /* light mode
   --color-primary-light-mode: #1976d2;
   --color-primary-dark-mode: #90a0df;
-  --color-text-light-mode: #212121;
+  --color-text-light-mode: #453f3f;
   --color-text-dark-mode: #dee2e6;
   --color-text-input-light-mode: black;
-  --color-background-100-light-mode: #ffffff;
+  --color-background-100-light-mode: #03a9f4;
   --color-background-500-light-mode: #f4f6fa;
   --color-background-900-light-mode: #eeeeee;
   --color-red-light-mode: #d32f2f;
-  --color-red-dark-mode: #fa5252;
+  --color-red-dark-mode: #fa5252; */
 }
 
 * {
@@ -43,13 +43,13 @@ body {
 }
 body.dark-mode {
   /* Switch to light mode */
-  --color-primary: var(--color-primary-light-mode);
-  --color-text: var(--color-text-light-mode);
-  --color-text-input: var(--color-text-input-light-mode);
-  --color-background-100: var(--color-background-100-light-mode);
-  --color-background-500: var(--color-background-500-light-mode);
-  --color-background-900: var(--color-background-900-light-mode);
-  --color-red: var(--color-red-light-mode);
+  --color-primary: #1976d2;
+  --color-text: #453f3f;
+  --color-text-input: black;
+  --color-background-100: #03a9f4;
+  --color-background-500: #f4f6fa;
+  --color-background-900: #eeeeee;
+  --color-red: #d32f2f;
 }
 em {
   color: var(--color-text-input);
@@ -58,7 +58,6 @@ em {
   color: rgb(252, 196, 25);
 }
 /* ******* */
-
 .nav-bar {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -163,7 +162,14 @@ form button {
   transition: all 0.3s;
   color: var(--color-text-input);
   background-color: var(--color-primary);
+  transition: all 0.3s ease;
 }
+
+button:active {
+  background-color: var(--color-background-500);
+  color: var(--color-text);
+}
+
 .search {
   width: 80%;
 }
@@ -174,7 +180,8 @@ form button {
   color: var(--color-text-input);
 }
 
-.search:focus {
+.search:focus,
+button:active {
   outline: none;
   box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
@@ -183,6 +190,7 @@ form button {
 .num-results {
   justify-self: end;
   font-size: 1.8rem;
+  margin-top: 10px;
 }
 
 .btn-toggle {
@@ -422,4 +430,12 @@ form button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dark {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
 }

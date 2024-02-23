@@ -9,6 +9,9 @@ export default function App() {
   // todo : states
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem("dark-mode") === "false" ? false : true
+  );
   // todo: custom hook
   const { movies, isLoading, error } = useMovies(query);
   const [watched, setWatched] = useLocalStorageState([], "watched");
@@ -26,15 +29,27 @@ export default function App() {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
   function handleDarkAndLight() {
-    document.body.classList.toggle("dark-mode");
+    setIsDark(!isDark);
+    localStorage.setItem("dark-mode", isDark);
+    console.log(isDark);
+    if (isDark) {
+      document.body.classList.remove("dark-mode");
+    } else {
+      document.body.classList.add("dark-mode");
+    }
   }
-  useEffect(handleDarkAndLight, []);
-
+  useEffect(function () {
+    handleDarkAndLight();
+  }, []);
+  // useEffect(function () {
+  //   if (localStorage.getItem("dark-mode") === "dark-mode")
+  //     document.body.classList.add("dark-mode");
+  // }, []);
   // todo : components
   return (
     <>
       <NavBar>
-        <Search query={query} setQuery={setQuery} />
+        <Search setQuery={setQuery} />
         <NumResult movies={movies} />
       </NavBar>
       <Main>
@@ -65,8 +80,8 @@ export default function App() {
           )}
         </Box>
       </Main>
-      <button id="toggleBtn" onClick={handleDarkAndLight}>
-        Toggle Dark Mode
+      <button className="btn-toggle dark " onClick={handleDarkAndLight}>
+        {isDark ? "Dark" : "Light"}
       </button>
     </>
   );
@@ -98,20 +113,17 @@ function NavBar({ children }) {
     </nav>
   );
 }
-function Search({ query, setQuery }) {
+function Search({ setQuery }) {
+  const [searchValue, setSearchValue] = useState("");
   const inputEl = useRef(null);
-  // function callBack(e) {
-  //   if (e.code === "Enter") {
-  // if (document.activeElement === inputEl.current) return; // todo : this way can make you do your idea
-  //     inputEl.current.focus();
-  //   }
-  // }
   useKey("Enter", function () {
     inputEl.current.focus();
   });
 
   function handleSubmit(e) {
     e.preventDefault();
+    setQuery(searchValue);
+    setSearchValue("");
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -119,8 +131,8 @@ function Search({ query, setQuery }) {
         className="search"
         type="text"
         placeholder="Search movies..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
         ref={inputEl}
       />
       <button>Search</button>
