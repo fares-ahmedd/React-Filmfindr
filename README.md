@@ -6,7 +6,10 @@ React-Filmfindr is a responsive project showcasing techniques like Custom Hooks,
 
 #### 
 
-![GIFMaker_me](https://github.com/fares-ahmedd/React-Filmfindr/assets/110955622/08881049-0309-4728-a83f-d96dca173d9d)
+
+<div style="text-align:center;">
+    ![GIFMaker_me](https://github.com/fares-ahmedd/React-Filmfindr/assets/110955622/08881049-0309-4728-a83f-d96dca173d9d)
+</div>
 
 ## 🚀 Run Locally
 
