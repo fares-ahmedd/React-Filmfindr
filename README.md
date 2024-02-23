@@ -6,8 +6,6 @@ React-Filmfindr is a responsive project showcasing techniques like Custom Hooks,
 
 #### 
 
-![GIFMaker_me](https://github.com/fares-ahmedd/React-Filmfindr/assets/110955622/08881049-0309-4728-a83f-d96dca173d9d)
-
 <!-- Full-width GIF -->
 <img src="https://github.com/fares-ahmedd/React-Filmfindr/assets/110955622/08881049-0309-4728-a83f-d96dca173d9d" alt="GIFMaker_me" style="width: 100%;">
 
@@ -27,5 +25,4 @@ bun dev
 npm run dev
 yarn dev
 
-This way, the last code block will be properly formatted as code in the README file. Your GIF will take the full width as desired.
 
