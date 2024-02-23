@@ -1,6 +1,7 @@
 ## 📌 Overview
 
-React-Filmfindr is a responsive project showcasing techniques like Custom Hooks, useEffect, and reusable components. Key dependencies include React, testing-library, and web-vitals for optimal performance feel free to fork it and send pull request.
+React-Filmfindr is a responsive project showcasing techniques like Custom Hooks, useEffect, and reusable components. Key dependencies include React, testing-library, and web-vitals for optimal performance feel free to fork it and send pull request. [Live Demo](https://fares-ahmedd.github.io/React-Filmfindr/)
+
 
 ## film-findr ![favicon-32x32](https://github.com/fares-ahmedd/React-Filmfindr/assets/110955622/b01d3650-c976-4853-81a0-8fabca020891)
 
