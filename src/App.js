@@ -28,16 +28,7 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
-  // function handleDarkAndLight() {
-  //   setIsDark(!isDark);
-  //   localStorage.setItem("dark-mode", isDark);
-  //   console.log(isDark);
-  //   if (isDark) {
-  //     document.body.classList.remove("dark-mode");
-  //   } else {
-  //     document.body.classList.add("dark-mode");
-  //   }
-  // }
+
   function handleDarkAndLight() {
     setIsDark(!isDark);
     localStorage.setItem("dark-mode", isDark);
@@ -50,6 +41,7 @@ export default function App() {
   }
   useEffect(function () {
     handleDarkAndLight();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // todo : components
